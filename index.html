@@ -3,38 +3,24 @@
   <head>
     <meta charset="utf-8">
     <title>Twittersito</title>
+    <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
     <h4>Contador de clicks</h4>
-    <h1>Twitter</h1>
-    <textarea id="generadorDeTweets"></textarea>0/140
+    <h1>Twittersito</h1>
+    <textarea id="generadorDeTweets" oninput="contadorCaracter()" placeholder="Escribe aquí tu tweet"></textarea>
+    <label for="twitter" id="contarCaracter"></label>
     <br>
-    De <input type="text" id="inputAutor">
-    <button id = "enviar" onclick="enviar()"> Enviar </button>
+    De: <input type="text" id="autorTweet">
+    <button id = "boton"> Enviar </button>
     <hr>
     <h2>Tweet Stories</h2>
     <section id="preview">
+      <div id="previewTweet">
 
+      </div>
     </section>
 
-
-
-    <!-- <form>
-      <textarea style="width: 500px; height: 100px" id="generadorDeContenido" onclick="contenido()"></textarea> 0/ 140
-      <br>
-      <section>
-        De: <input type="text">
-        <button type="text">Enviar</button>
-      </section>
-    </form>
-    <hr>
-    <section>
-      <h3>Tweet Stories</h3>
-      <section id="preview">
-        <div>Mi twett favorito</div>
-        <div>Mi nombre</div>
-      </section>
-    </section> -->
     <script type="text/javascript" src="js/main.js"></script>
   </body>
 </html>

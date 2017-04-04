@@ -1,34 +1,41 @@
+var i = 0;
+var boton = document.getElementById('boton');
+boton.addEventListener("click",agregarTweet);
 
-function enviar() {
-//valores input / textArea
-// definir contenedor individual y seccion de contenedores
-//createTextNode input / textArea
-// hijos del div
-// div hijo seccion
-
-  var inputAutor = document.getElementById('inputAutor').value;
-  var generadorDeTweets = document.getElementById('generadorDeTweets').value;
+function agregarTweet() {
+  var areaTexto = document.getElementById('generadorDeTweets').value;
+  var autorTweet = document.getElementById('autorTweet').value;
+  var previewTweet = document.getElementById('previewTweet');
   var preview = document.getElementById('preview');
+  var linea = document.createElement("hr");
 
-  var nuevoTweet = document.createElement("div");
-  var tweetAgregado = document.createTextNode(generadorDeTweets);
-  var autorTweet = document.createTextNode(inputAutor);
+  previewTweet.innerHTML += areaTexto + "<br>" + autorTweet + "<br>";
+  previewTweet.appendChild(linea);
+  preview.appendChild(previewTweet);
 
-  tweetAgregado.appendChild(nuevoTweet);
-  autorTweet.appendChild(nuevoTweet);
-  nuevoTweet.appendChild(preview);
-
-
-
-
-
-
-  // var tweetAgregado = document.getElementById('generadorDeTweets').value;
-  // var nuevoTweet = document.createElement("div");
-  //
-  // var listaDeTweets = document.createTextNode(tweetAgregado);//
-  // nuevoTweet.appendChild(listaDeTweets);
-  // // var autorTweet = document.getElementById('inputAutor').value;
-  //
-  // var nuevosTweets = document.getElementById('preview').appendChild(nuevoTweet);
 }
+
+function contadorCaracter() {
+  var contador = document.getElementById('contarCaracter');
+  var texto = document.getElementById("generadorDeTweets");
+  i++;
+  if (i == 140) {
+    alert("Te has pasado de caracteres");
+  }
+
+  contador.innerText = i + " /140";
+}
+
+
+// var contador = document.getElementById("generadorDeTweets")
+// contador.addEventListener("onkeyup", contadorLetras);
+//
+// function contadorLetras() {
+//   var contarCaracter = document.getElementById("contarCaracter");
+//   contarCaracter.innerText = " / 140 " + incremento ++;
+//   if (incremento >= 30) {
+//     alert("Ya no puedes escribir");
+//   }
+//   console.log(incremento);
+// }
+//
